@@ -152,7 +152,17 @@ AUTHENTICATION_BACKENDS = (
 'django.contrib.auth.backends.ModelBackend',
 'allauth.account.auth_backends.AuthenticationBackend',
 )
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'postmaster@sandbox53fe7b7ea0c6431faf1afe502e292726.mailgun.org'
+EMAIL_HOST_PASSWORD = '25d310a67ce12ac4947df30ea399b2bd-f0e50a42-febb3345'
+
+DEFAULT_FROM_EMAIL = 'admin@it_academy.com'
+
 
 # django-allauth config
 ACCOUNT_SESSION_REMEMBER = True 
